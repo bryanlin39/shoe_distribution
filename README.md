@@ -12,13 +12,12 @@ Shoe Distribution Database is a web application that manages distribution of sho
 
 * Clone the repository (https://github.com/bryanlin39/shoe_distribution.git)
 * Install all gems (sinatra, sinatra-contrib, pg, sinatra-activerecord, rake, rspec, capybara, pry) by typing "bundle" in the terminal
-* Set up the database by first typing "postgres" into the terminal, then opening another terminal window and typing "psql"
-<!-- * In PSQL, create a database with "CREATE DATABASE volunteer_tracker;"
-  * Create a table with "CREATE TABLE projects (id serial PRIMARY KEY, description varchar);"
-  * Create another table with "CREATE TABLE volunteers (id serial PRIMARY KEY, name varchar, hours int, project_id int);"
+* Set up the database by first typing "postgres" into the terminal
+  * Create the database by typing "rake db:create" into the terminal
+  * Create the tables by typing "rake db:migrate" into the terminal
 * Run Sinatra by typing "ruby app.rb" in another terminal window
 * Open any web browser
-* Navigate to the application home page by entering "localhost:4567" in the URL -->
+* Navigate to the application home page by entering "localhost:4567" in the URL
 
 ## Known Bugs
 
