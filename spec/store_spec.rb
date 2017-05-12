@@ -1,6 +1,7 @@
 require('spec_helper')
 
 describe(Store) do
+  
   describe('.all') do
     it('returns all stores in the database') do
       store1 = Store.create({:name => 'Foot Locker'})
