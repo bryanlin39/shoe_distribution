@@ -2,6 +2,8 @@ class Store < ActiveRecord::Base
   has_many :collabs
   has_many :brands, through: :collabs
 
+  before_save(:capitalize_name)
+
   def add_brands(brands_array)
     brands_array.each() do |brand|
       self.brands.push(brand)
@@ -16,6 +18,12 @@ class Store < ActiveRecord::Base
       end
     end
     available_brands
+  end
+
+private
+
+  def capitalize_name
+    self.name = self.name().capitalize()
   end
 
 end

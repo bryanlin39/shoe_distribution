@@ -7,7 +7,7 @@
     <h3>Store Inventory:</h3>
     <ul>
       <% @store.brands.each() do |brand| %>
-      <li><a href='/brands/<%= brand.id() %>'><%= brand.name() %></a></li>
+      <li><a href='/brands/<%= brand.id() %>'><%= brand.name() %></a>: $<%= brand.price() %></li>
       <% end %>
     </ul>
   </div>
@@ -32,7 +32,7 @@
       <input type='checkbox' name='remove_brands[]' value='<%= brand.id() %>'><%= brand.name() %><br>
       <% end %>
 
-      <button type='submit' name='update_button'>Update</button>
+      <button type='submit' name='update_button' class='btn btn-outline-warning'>Update</button>
     </form>
 
     <hr>
@@ -40,7 +40,7 @@
     <h4>Delete Store</h4>
     <form action='/stores/<%= @store.id() %>/delete' method='post'>
       <input type='hidden' name='_method' value='delete'>
-      <button type='submit' name='delete_button'>Delete</button>
+      <button type='submit' name='delete_button' class='btn btn-outline-danger'>Delete</button>
     </form>
   </div>
 </div>

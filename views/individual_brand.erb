@@ -5,7 +5,7 @@
 
     <hr>
 
-    <h4>Update Brand:</h4>
+    <h4>Update Brand</h4>
     <form action='/brands/<%= @brand.id() %>/edit' method='post'>
       <input type='hidden' name='_method' value='patch'>
 
@@ -17,15 +17,15 @@
         <label for='update_brand_price'>Price:</label>
         <input type='text' name='update_brand_price'>
       </div>
-      <button type='submit' name='update_button'>Update</button>
+      <button type='submit' name='update_button' class='btn btn-outline-warning'>Update</button>
     </form>
 
     <hr>
 
-    <h4>Delete Brand:</h4>
+    <h4>Delete Brand</h4>
     <form action='/brands/<%= @brand.id() %>/delete' method='post'>
       <input type='hidden' name='_method' value='delete'>
-      <button type='submit' name='delete_button'>Delete</button>
+      <button type='submit' name='delete_button' class='btn btn-outline-danger'>Delete</button>
     </form>
 
   </div>
