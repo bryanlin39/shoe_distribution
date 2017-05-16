@@ -2,10 +2,12 @@ class Brand < ActiveRecord::Base
   has_many :collabs
   has_many :stores, through: :collabs
 
-  # validates :name, length: { maximum: 100}
-  # validates :name, presence: true
+  validates :name, length: { maximum: 100}
+  validates :name, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
+
   before_save(:capitalize_name)
-  # before_create(:format_price)
+  before_save(:format_price)
 
   def self.ids_to_brands(id_array)
     brands_array = []
@@ -22,8 +24,8 @@ private
     self.name = self.name().capitalize()
   end
 
-  # def format_price
-  #   self.price = self.price().round(2)
-  # end
+  def format_price
+    self.price = self.price().round(2)
+  end
 
 end

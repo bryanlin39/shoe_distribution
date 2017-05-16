@@ -2,6 +2,10 @@ class Store < ActiveRecord::Base
   has_many :collabs
   has_many :brands, through: :collabs
 
+  validates :name, length: { maximum: 100}
+  validates :name, presence: true
+  validates :name, uniqueness: { case_sensitive: false }
+
   before_save(:capitalize_name)
 
   def add_brands(brands_array)
