@@ -24,7 +24,7 @@
 
       <label for='add_to_inventory'>Add to Inventory:</label><br>
       <% @available_brands.each() do |brand| %>
-      <input type='checkbox' name='add_brands[]' value='<%= brand.id() %>'><%= brand.name() %><br>
+      <input type='checkbox' name='add_brands[]' value='<%= brand.id() %>' id='<%= brand.name() %>'><%= brand.name() %><br>
       <% end %>
 
       <label for='remove_from_inventory'>Remove from Inventory:</label><br>
